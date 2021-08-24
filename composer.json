@@ -1,0 +1,66 @@
+{
+    "name": "lotgd-core/lodge-title-change-bundle",
+    "version": "0.1.0",
+    "type": "lotgd-bundle",
+    "description": "Lodge Title Change for LoTGD IDMarinas Edition.",
+    "license": "BSD-3-Clause",
+    "authors": [
+        {
+            "name": "Iván Diaz Marinas (IDMarinas)",
+            "email": "35842929+idmarinas@users.noreply.github.com",
+            "homepage": "https://github.com/lotgd-core/lodge-title-change-bundle",
+            "role": "Developer, Maintainer"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/lotgd-core/lodge-title-change-bundle/issues"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "php": "^7.3",
+        "symfony/config": "^4.4",
+        "symfony/dependency-injection": "^4.4",
+        "symfony/event-dispatcher": "^4.4",
+        "symfony/http-kernel": "^4.4"
+    },
+    "require-dev": {
+        "idmarinas/lotgd": "^6.0",
+        "matthiasnoback/symfony-config-test": "^4.2",
+        "matthiasnoback/symfony-dependency-injection-test": "^4.2",
+        "nyholm/symfony-bundle-test": "^1.7",
+        "phpunit/phpunit": "^9.5",
+        "symfony/phpunit-bridge": "^5.3",
+        "symfony/test-pack": "^1.0"
+    },
+    "conflict": {
+        "idmarinas/lotgd": "<6.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lotgd\\Bundle\\LodgeTitleChangeBundle\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Lotgd\\Bundle\\LodgeTitleChangeBundle\\Tests\\": "tests/"
+        }
+    },
+    "scripts": {
+        "test": "php bin/phpunit --process-isolation"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": {
+            "*": "dist"
+        },
+        "process-timeout": 5000,
+        "sort-packages": true
+    },
+    "funding": [
+        {
+            "type": "paypal",
+            "url": "https://www.paypal.me/idmarinas"
+        }
+    ]
+}

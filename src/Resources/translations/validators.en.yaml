@@ -1,0 +1,4 @@
+lodge_title_change:
+    no_bold: 'Your title cannot contain the bold code'
+    no_italic: 'Your title cannot contain the italics code'
+    no_spaces: 'Your title cannot contain spaces'

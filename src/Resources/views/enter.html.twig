@@ -1,0 +1,32 @@
+{% trans_default_domain translation_domain %}
+
+{{ 'section.default.subtitle'|trans(_context)|colorize }}
+
+{{ 'section.default.say'|trans(_context)|colorize }}
+
+{{ 'section.default.current'|trans(_context) }}: "{{ otitle }}",
+{{ 'section.default.look'|trans(_context)|colorize }}
+
+{% if is_preview %}
+    <div class="ui segment">
+        {{ 'section.preview.paragraph'|trans(_context)|colorize|nl2br }}
+    </div>
+{% endif %}
+
+{% if is_title_changed %}
+    <div class="ui success message">
+        {{ 'section.changed.paragraph'|trans(_context)|uncolorize }}
+    </div>
+{% endif %}
+
+{{ form_start(form) }}
+    {{ form_row(form.new_title) }}
+    <div class="fields">
+        {{ form_row(form.button_preview) }}
+        {{ form_row(form.button_change) }}
+    </div>
+{{ form_end(form) }}
+
+<div class="ui info message">
+    {{ 'section.default.note'|trans(_context)|uncolorize|nl2br }}
+</div>
