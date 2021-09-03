@@ -1,11 +1,11 @@
 <?php
 
 /**
- * This file is part of "LoTGD Bundle Clan News".
+ * This file is part of "LoTGD Bundle Lodge Title Change".
  *
- * @see https://github.com/lotgd-core/clan-news-bundle
+ * @see https://github.com/lotgd-core/lodge-title-change-bundle
  *
- * @license https://github.com/lotgd-core/clan-news-bundle/blob/master/LICENSE.txt
+ * @license https://github.com/lotgd-core/lodge-title-change-bundle/blob/master/LICENSE.txt
  * @author IDMarinas
  *
  * @since 0.1.0
