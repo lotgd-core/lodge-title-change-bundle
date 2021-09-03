@@ -54,6 +54,7 @@ class LodgeTitleChangeSubscriber implements EventSubscriberInterface
 
         $times = (int) get_module_pref('times_purchased', 'lodge_title_change');
         $cost  = $this->parameter->get('lotgd_bundle.lodge_title_change.cost.first');
+        $pointsAvailable = $session['user']['donation'] - $session['user']['donationspent'];
 
         if ($times)
         {
@@ -61,7 +62,7 @@ class LodgeTitleChangeSubscriber implements EventSubscriberInterface
         }
 
         //-- If they have less than what they need just ignore them
-        if (($times * $cost) > $session['user']['donation'])
+        if ($cost > $pointsAvailable)
         {
             return;
         }

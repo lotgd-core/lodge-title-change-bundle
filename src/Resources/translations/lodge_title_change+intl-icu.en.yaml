@@ -19,6 +19,10 @@ section:
         `7Is this how you wish it to look?`0
     changed.paragraph: 'Your custom title has been set for a cost of {cost,number} Donator Points.'
 
+no_donator_points: >
+    `n`nHe consults his book silently for a moment and then turns to you.
+    "`&I'm terribly sorry, but you only have {points_available,plural, =1{1 point} other{# points}} available and chante title would cost you {cost,plural, =1{1 point} other{# points}}.`0"`0
+
 points.description: 'The ability to choose a custom in-game title costs {initial,plural, =1{1 point} other{# points}} initially and {extra,plural, =1{1 point} other{# points}} for every change thereafter. [NOTE: A title is the prefix on your name like Farmboy or Page]'
 
 navigation:

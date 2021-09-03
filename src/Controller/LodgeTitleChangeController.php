@@ -71,21 +71,28 @@ class LodgeTitleChangeController extends AbstractController
         $otitle = $this->tool->getPlayerTitle();
         $otitle = '`0' == $otitle ? '' : $otitle;
 
-        $form = $this->createForm(TitleChangeType::class, ['new_title' => $otitle], [
-            'action' => $this->getModuleUrl('enter'),
-        ]);
-
-        $times = (int) get_module_pref('times_purchased', 'lodge_title_change');
-        $cost  = $this->parameter->get('lotgd_bundle.lodge_title_change.cost.first');
+        $times           = (int) get_module_pref('times_purchased', 'lodge_title_change');
+        $cost            = $this->parameter->get('lotgd_bundle.lodge_title_change.cost.first');
+        $pointsAvailable = $session['user']['donation'] - $session['user']['donationspent'];
 
         if ($times)
         {
             $cost = $this->parameter->get('lotgd_bundle.lodge_title_change.cost.other');
         }
 
+        $params['points_available'] = $pointsAvailable;
         $params['cost']             = $cost;
         $params['is_preview']       = false;
         $params['is_title_changed'] = false;
+
+        if ($cost > $pointsAvailable)
+        {
+            return $this->render('@LotgdLodgeTitleChange/not_donation_points.html.twig', $params);
+        }
+
+        $form = $this->createForm(TitleChangeType::class, ['new_title' => $otitle], [
+            'action' => $this->getModuleUrl('enter'),
+        ]);
 
         $form->handleRequest($request);
 
