@@ -1,6 +1,6 @@
 {
     "name": "lotgd-core/lodge-title-change-bundle",
-    "version": "0.1.0",
+    "version": "0.1.1",
     "type": "lotgd-bundle",
     "description": "Lodge Title Change for LoTGD IDMarinas Edition.",
     "license": "BSD-3-Clause",
