@@ -28,7 +28,7 @@ class LodgeTitleChangeSubscriber implements EventSubscriberInterface
     public const TRANSLATION_DOMAIN = LotgdLodgeTitleChangeBundle::TRANSLATION_DOMAIN;
 
     private $navigation;
-    private $params;
+    private $parameter;
 
     public function __construct(ParameterBagInterface $parameter, Navigation $navigation)
     {
@@ -41,8 +41,8 @@ class LodgeTitleChangeSubscriber implements EventSubscriberInterface
         $args = $event->getArguments();
 
         $args[] = ['points.description', [
-            'initial' => get_module_setting('initialpoints'),
-            'extra'   => get_module_setting('extrapoints'),
+            'initial' => $this->parameter->get('lotgd_bundle.lodge_title_change.cost.first'),
+            'extra'   => $this->parameter->get('lotgd_bundle.lodge_title_change.cost.other'),
         ], self::TRANSLATION_DOMAIN];
 
         $event->setArguments($args);
